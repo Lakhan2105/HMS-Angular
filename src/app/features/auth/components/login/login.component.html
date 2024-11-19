@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h2>Login Form</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-icon matPrefix>email</mat-icon>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" required />
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')"
+        >Email is required.</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')"
+        >Invalid email format.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-icon matPrefix>lock</mat-icon>
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" required />
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')"
+        >Password is required.</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    >
+      Login
+    </button>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <p>
+      Don't have an account?
+      <a routerLink="/auth/signup" style="color: #6200ea">Register</a>
+    </p>
+  </form>
+</div>

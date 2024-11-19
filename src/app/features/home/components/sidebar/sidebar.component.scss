@@ -1,0 +1,18 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #dcd2e9;
+    color: white;
+}
+
+  mat-list-item {
+    color: rgb(255, 255, 255);
+  }
+
+  mat-list-item:hover {
+    background-color: #001fe9;
+  }
+
+  span {
+    font-size: larger;    
+  }

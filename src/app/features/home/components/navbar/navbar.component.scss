@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: #6200ea;
+    color: white;
+  
+    .navbar-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-left: 1rem;
+    }
+  
+    .spacer {
+      flex: 1;
+    }
+  
+    button[mat-icon-button] {
+      color: white;
+      margin-right: 1rem;
+    }
+  
+    mat-menu {
+      background-color: white;
+      color: #333;
+  
+      .mat-menu-item {
+        display: flex;
+        align-items: center;
+  
+        mat-icon {
+          margin-right: 0.5rem;
+          color: #6200ea;
+        }
+  
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+  
+      mat-divider {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+  

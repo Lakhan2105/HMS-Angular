@@ -1,0 +1,46 @@
+<div class="signup-container">
+    <h2>SignUp Form</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-icon matPrefix>email</mat-icon>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+        <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">Invalid email format.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-label>Create Password</mat-label>
+        <input matInput formControlName="password" type="password" required />
+        <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">Password is required.</mat-error>
+        <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-label>Retype Password</mat-label>
+        <input matInput formControlName="confirmPassword" type="password" required />
+        <!-- <mat-error *ngIf="signUpForm.errors?.mismatch">Passwords must match.</mat-error> -->
+        <mat-error *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">Confirm Password is required.</mat-error>
+    </mat-form-field>   
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Select Role(s)</mat-label>
+        <mat-select formControlName="role" multiple>
+          <mat-option *ngFor="let role of availableRoles" [value]="role">{{ role }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="signUpForm.get('role')?.hasError('required')">At least one role is required.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Clinic ID</mat-label>
+        <input matInput formControlName="clinicId" type="number" required />
+        <mat-error *ngIf="signUpForm.get('clinicId')?.hasError('required')">Clinic ID is required.</mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
+    </form>
+  </div>
+  

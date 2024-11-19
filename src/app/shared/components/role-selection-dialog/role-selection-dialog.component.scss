@@ -1,0 +1,48 @@
+mat-dialog-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  mat-dialog-title {
+    font-size: 24px;
+    color: #f6e4a8;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  mat-list {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  mat-list-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  mat-list-item:hover {
+    background-color: #5899fc;
+    color: white;
+
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  button {
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
